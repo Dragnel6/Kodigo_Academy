@@ -1,35 +1,37 @@
 import "./Login.css"
-import { useForm } from 'react-hook-form';
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
-// Definimos el esquema de validación con Yup
-const schema = yup.object({
-  email: yup
-    .string()
-    .email("Please enter a correct format")
-    .required("Email is required"),
-  password: yup
-    .string()
-    .required("Password is required")
-    .min(8, "Please enter at least 8 characters")
-    .matches(/[A-Z]/)
-    .matches(/[a-z]/)
-    .matches(/[0-9]/),
-  confirm_password: yup
-    .string()
-    .oneOf([yup.ref("password")], "Passwords must match")
-    .required("Confirm password is required")
-});
+const POST_URL = "http://localhost:3000/api/auth/login";
 
-const LoginAcademy = () => {
-  const { register, handleSubmit } = useForm({
-    resolver: yupResolver(schema)
-  });
+function LoginAcademy() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  // Función que maneja el submit
-  const onSubmitForm = (data) => {
-    console.log("Datos ingresados:", data);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    try {
+      const response = await fetch(POST_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await response.json();
+      if (response.ok && data.token) {
+        localStorage.setItem('token', data.token);
+        // Redirigir a CursosAcademy
+        navigate('/cursos');
+      } else {
+        setError(data.message || 'Error en el login');
+      }
+    } catch (err) {
+      setError('Error de conexión');
+    }
   };
 
   return (
@@ -39,20 +41,18 @@ const LoginAcademy = () => {
           <img src="https://academy.kodigo.org/pluginfile.php/1/theme_mb2nl/logo/1757611432/logo.png" alt="" />
           <h2>Iniciar sesión</h2>
         </div>
-        <form onSubmit={handleSubmit(onSubmitForm)}>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <input type="email" placeholder="Email" {...register("email")} required/>
+            <input type="text" placeholder="Usuario" value={username} onChange={e => setUsername(e.target.value)} required />
           </div>
           <div className="input-group">
-            <input type="password" placeholder="Password" {...register("password")} required />
+            <input type="password" placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} required />
           </div>
-          <div className="input-group">
-            <input type="password" placeholder="Confirm password" {...register("confirm_password")} required />
-          </div>
+          {error && <div style={{ color: 'red', marginBottom: '10px' }}>{error}</div>}
           <button type="submit" className="btn-login"> Iniciar </button>
         </form>
         <div className="login-footer">
-            <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+          <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
         </div>
       </div>
       {/* Agregar un imagen a la par del formulario en forma horizontal */}
@@ -61,6 +61,6 @@ const LoginAcademy = () => {
       </div>
     </div>
   );
-};
+}
 
 export default LoginAcademy
