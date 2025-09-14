@@ -1,6 +1,6 @@
 import "./Login.css"
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, Link } from 'react-router';
 
 const POST_URL = "http://localhost:3000/api/auth/login";
 
@@ -52,7 +52,7 @@ function LoginAcademy() {
           <button type="submit" className="btn-login"> Iniciar </button>
         </form>
         <div className="login-footer">
-          <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+          <p>¿No tienes una cuenta? <Link to="/register">Regístrate</Link></p>
         </div>
       </div>
       {/* Agregar un imagen a la par del formulario en forma horizontal */}
