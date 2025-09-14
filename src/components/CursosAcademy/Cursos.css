@@ -1,0 +1,97 @@
+.cursos-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.cursos-header {
+  background: linear-gradient(90deg, #4a148c, #6a1b9a);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.cursos-header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.cursos-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.btn-filtro {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-filtro:hover {
+  background: #eaeaea;
+}
+
+.input-buscar {
+  flex: 1;
+  max-width: 300px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.curso-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.curso-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.curso-body {
+  padding: 16px;
+}
+
+.curso-body h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #333;
+}
+
+.curso-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.curso-info {
+  font-size: 13px;
+  color: #444;
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
