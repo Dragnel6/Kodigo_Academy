@@ -2,6 +2,7 @@ import "./Login.css"
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
+
 const POST_URL = "http://localhost:3000/api/auth/login";
 
 function LoginAcademy() {
@@ -9,6 +10,7 @@ function LoginAcademy() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +26,8 @@ function LoginAcademy() {
       const data = await response.json();
       if (response.ok && data.token) {
         localStorage.setItem('token', data.token);
-        // Redirigir a CursosAcademy
-        navigate('/cursos');
+        // Redirigir a dashboard
+        navigate('/dashboard');
       } else {
         setError(data.message || 'Error en el login');
       }
