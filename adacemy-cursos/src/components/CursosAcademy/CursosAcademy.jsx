@@ -52,7 +52,7 @@ function CursosAcademy() {
   return (
     <div className="cursos-page">
       <header className="cursos-header">
-        <a href="/dashboard">Volver atras</a>
+        <a href="/dashboard">Regresar atras</a>
         <h1>Todos los cursos</h1>
       </header>
 
