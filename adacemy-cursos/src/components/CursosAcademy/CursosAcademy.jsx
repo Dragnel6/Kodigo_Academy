@@ -52,7 +52,7 @@ function CursosAcademy() {
   return (
     <div className="cursos-page">
       <header className="cursos-header">
-        <a href="/dashboard">Volver atras</a>
+        <a href="/dashboard">Regresar atras</a>
         <h1>Todos los cursos</h1>
       </header>
 
@@ -68,7 +68,7 @@ function CursosAcademy() {
       </div>
 
       {loading ? (
-        <p className="text-center">Cargando cursos...</p>
+        <p className="text-center">Cargando Cursos...</p>
       ) : error ? (
         <p className="error">{error}</p>
       ) : (
