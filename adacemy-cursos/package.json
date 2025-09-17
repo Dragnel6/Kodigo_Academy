@@ -11,30 +11,19 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
-<<<<<<< HEAD
     "@tailwindcss/vite": "^4.1.13",
-=======
-    "axios": "^1.12.1",
->>>>>>> henry/dashboard
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",
     "react-router": "^7.9.0",
-<<<<<<< HEAD
     "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.13",
-=======
->>>>>>> henry/dashboard
     "yup": "^1.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-<<<<<<< HEAD
-=======
-    "@vitejs/plugin-react": "^5.0.2",
->>>>>>> henry/dashboard
     "@vitejs/plugin-react-swc": "^4.0.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",

@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-
-
-function CursosAcademy() {
-  return (
-    <div>CursosAcademy</div>
-  )
-}
-
-export default CursosAcademy
-=======
 import "./Cursos.css";
 import { useEffect, useState } from "react";
 
@@ -101,4 +90,3 @@ function CursosAcademy() {
 }
 
 export default CursosAcademy;
->>>>>>> henry/dashboard
