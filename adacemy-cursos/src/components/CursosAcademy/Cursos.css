@@ -9,13 +9,26 @@
   padding: 30px;
   border-radius: 8px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .cursos-header h1 {
   font-size: 28px;
   margin: 0;
 }
-
+.cursos-header a{
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+.cursos-header a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 .cursos-toolbar {
   display: flex;
   justify-content: space-between;

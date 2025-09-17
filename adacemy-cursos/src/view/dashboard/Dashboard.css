@@ -1,26 +1,17 @@
 /* Contenedor principal centrado */
 .login-container {
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  display: block;
   align-items: center;
-  height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-}
-
-/* Caja del dashboard */
-.login-box {
-  padding: 40px;
-  border-radius: 12px;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
+  gap: 20px;
+  background-color: #17133D;
+  height: 100%;
 }
 
 /* Título */
-.login-box .music h2 {
+.music h2 {
   margin: 0;
   margin-bottom: 20px;
   color: #3F5F95;
@@ -32,16 +23,29 @@
 .dashboard-content {
   margin: 30px 0;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #21395A;
   border-radius: 8px;
   color: #333;
   font-size: 15px;
-  min-height: 150px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
+.login-container .boxer .dashboard-callout{
+  text-align: center;
+  margin-top: 20px;
+}
 /* Botón inferior */
-.btn-login {
+.login-container .boxer .dashboard-button {
   width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 10px;
+}
+.btn-login {
+  max-width: 250px;
   padding: 12px;
   background: #3F5F95;
   border: none;
@@ -55,6 +59,48 @@
 
 .btn-login:hover {
   background: #cc0000;
+}
+
+/* Botón de cerrar sesión */
+.btn-logout {
+  background: #cc0000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-right: 10px;
+}
+
+.btn-logout:hover {
+  background: #a30000;
+}
+
+/* Navbar */
+.dashboard-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #21395A;
+  padding: 16px 32px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.navbar-logo img {
+  max-height: 48px;
+  height: 48px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
 }
 
 /* Responsive */
@@ -94,10 +140,16 @@
   background-color: #ffffff;
   border-left: 6px solid #3F5F95;
   padding: 15px 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   border-radius: 8px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .curso-card h3 {
@@ -112,10 +164,189 @@
   color: #555;
 }
 
+.dashboard-info-top {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-info-top img {
+  max-width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 12px;
+  background-color: whitesmoke;
+}
+
+.dashboard-info-top .academy-info {
+  color: #F7C873;
+  border-radius: 18px;
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.12);
+  padding: 28px 36px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #21395A 70%, #3F5F95 100%);
+  text-align: center;
+  margin-top: 18px;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 2px solid #3F5F95;
+}
+
+.dashboard-info-top .academy-info h3 {
+  color: #F7C873;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.dashboard-info-top .academy-info p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.dashboard-info-top .academy-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.dashboard-info-top .academy-info ul li {
+  background: #3F5F95;
+  color: #F7C873;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+
+.dashboard-info-top .academy-info ul li:hover {
+  background: #F7C873;
+  color: #21395A;
+}
+
 /* Llamado final */
 .dashboard-call {
   margin-top: 30px;
   font-size: 18px;
-  color: #cc0000;
+  color: white;
   font-weight: bold;
+}
+.dashboard-callout p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #f0f0f0;
+  margin-top: 8px;
+}
+.dashboard-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  padding: 40px 0;
+}
+
+.dashboard-image img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+}
+
+.dashboard-image .academy-info {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+  padding: 18px 24px;
+  font-size: 15px;
+  color: #3F5F95;
+  text-align: left;
+  margin-top: 10px;
+}
+
+/* Estadísticas y accesos rápidos */
+.dashboard-stats {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 30px 0 10px 0;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #21395A;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+  padding: 18px 32px;
+  min-width: 140px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.stat-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: #3F5F95;
+  font-weight: bold;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.dashboard-access {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-access .btn-login {
+  max-width: 180px;
+  padding: 10px 0;
+  font-size: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .dashboard-content {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .curso-card {
+    max-width: 100%;
+    min-width: unset;
+  }
+  .dashboard-image {
+    padding: 20px 0;
+    min-width: unset;
+  }
+  .login-box {
+    min-width: unset;
+    max-width: 100%;
+    padding: 20px;
+  }
 }

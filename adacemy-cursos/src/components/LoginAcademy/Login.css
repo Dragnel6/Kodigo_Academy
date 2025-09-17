@@ -1,5 +1,4 @@
-
-.login-container {
+.loginacademy-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,9 +6,9 @@
   font-family: Arial, sans-serif;
 }
 
-.login-box {
-  
+.loginacademy-box {
   padding: 40px;
+  margin: 20px;
   border-radius: 12px;
   text-align: center;
   width: 100%;
@@ -17,7 +16,7 @@
   box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
 }
 
-.login-box .music h2{
+.loginacademy-box .loginacademy-music h2{
     margin: 0;
     margin-bottom: 10px;
     color: #fff;
@@ -25,15 +24,15 @@
      
 }
 
-.login-container .login-box .music img{
+.loginacademy-container .loginacademy-box .loginacademy-music img{
     width: 100%;
 }
 
-.input-group {
+.loginacademy-input-group {
   margin-bottom: 20px;
 }
 
-.input-group input {
+.loginacademy-input-group input {
   width: 100%;
   padding: 12px;
   border: none;
@@ -44,12 +43,12 @@
   transition: 0.3s;
 }
 
-.input-group input:focus {
+.loginacademy-input-group input:focus {
   box-shadow: 0 0 0 2px #ff0000;
 }
 
 
-.btn-login {
+.loginacademy-btn-login {
   width: 100%;
   padding: 12px;
   background: #3F5F95;
@@ -62,41 +61,41 @@
   transition: background 0.3s;
 }
 
-.btn-login:hover {
+.loginacademy-btn-login:hover {
   background: #cc0000;
 }
 
 /*
-.login-footer {
+.loginacademy-footer {
   margin-top: 20px;
   color: #aaa;
   font-size: 14px;
 }
 
-.login-footer a {
+.loginacademy-footer a {
   color: #ff0000;
   text-decoration: none;
   font-weight: 500;
 }
 
-.login-footer a:hover {
+.loginacademy-footer a:hover {
   text-decoration: underline;
 }
 */
-.login-container .login-image{
+.loginacademy-container .loginacademy-image{
     margin-top: 20px;
     width: 100%;
 }
-.login-container .login-image img{
+.loginacademy-container .loginacademy-image img{
     width: 100%;
 }
 /* responsive */
 
 @media (max-width: 1000px) {
-    .login-container .login-image{
+    .loginacademy-container .loginacademy-image{
         display: none;
     }
-  .login-container .login-image img{
+  .loginacademy-container .loginacademy-image img{
     display: none;
   }
 }
