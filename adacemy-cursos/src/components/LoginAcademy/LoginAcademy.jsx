@@ -1,6 +1,11 @@
 import "./Login.css"
 import { useState } from 'react';
+<<<<<<< HEAD
 import { useNavigate, Link } from 'react-router';
+=======
+import { useNavigate } from 'react-router';
+
+>>>>>>> henry/dashboard
 
 const POST_URL = "http://localhost:3000/api/auth/login";
 
@@ -9,6 +14,10 @@ function LoginAcademy() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+<<<<<<< HEAD
+=======
+  
+>>>>>>> henry/dashboard
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,8 +33,13 @@ function LoginAcademy() {
       const data = await response.json();
       if (response.ok && data.token) {
         localStorage.setItem('token', data.token);
+<<<<<<< HEAD
         // Redirigir a CursosAcademy
         navigate('/cursos');
+=======
+        // Redirigir a dashboard
+        navigate('/dashboard');
+>>>>>>> henry/dashboard
       } else {
         setError(data.message || 'Error en el login');
       }
@@ -52,7 +66,11 @@ function LoginAcademy() {
           <button type="submit" className="btn-login"> Iniciar </button>
         </form>
         <div className="login-footer">
+<<<<<<< HEAD
           <p>¿No tienes una cuenta? <Link to="/register">Regístrate</Link></p>
+=======
+          <p>¿No tienes una cuenta? <a href="../Register/Register.jsx">Regístrate</a></p>
+>>>>>>> henry/dashboard
         </div>
       </div>
       {/* Agregar un imagen a la par del formulario en forma horizontal */}
