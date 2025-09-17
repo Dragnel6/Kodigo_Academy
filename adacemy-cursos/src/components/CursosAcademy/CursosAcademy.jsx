@@ -68,7 +68,7 @@ function CursosAcademy() {
       </div>
 
       {loading ? (
-        <p className="text-center">Cargando cursos...</p>
+        <p className="text-center">Cargando Cursos...</p>
       ) : error ? (
         <p className="error">{error}</p>
       ) : (
